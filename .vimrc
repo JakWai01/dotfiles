@@ -44,3 +44,6 @@ nnoremap <silent> <leader>- :vertical resize -5<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leadeR>gf :YcmCompleter FixIt<CR>
 
+set laststatus=2
+set matchpairs+=<:>
+set ignorecase
