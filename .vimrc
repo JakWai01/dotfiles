@@ -21,12 +21,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-utils/vim-man'
 Plug 'git@github.com:Valloric/YouCompleteMe.git'
 Plug 'jremmen/vim-ripgrep'
-Plug 'dracula/vim',{'as':'dracula'}
 
 call plug#end()
 
 set background=dark
-colorscheme dracula
  
 let mapleader = " "
 
