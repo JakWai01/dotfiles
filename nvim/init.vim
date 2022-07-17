@@ -14,6 +14,9 @@ set undofile
 set incsearch
 set ignorecase
 
+syntax enable
+filetype plugin indent on
+
 call plug#begin()
 
 Plug 'chriskempson/base16-vim'
