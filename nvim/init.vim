@@ -21,6 +21,7 @@ set history=1000
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set colorcolumn=80
 
 syntax enable
 filetype plugin indent on
@@ -31,7 +32,11 @@ Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dense-analysis/ale'
 Plug 'airblade/vim-rooter'
+
+Plug 'airblade/vim-rooter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-bufword'
@@ -42,6 +47,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'lifepillar/vim-solarized8'
+Plug 'plasticboy/vim-markdown'
+
 
 call plug#end()
 
