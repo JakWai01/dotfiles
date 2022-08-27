@@ -16,7 +16,6 @@ set ignorecase
 
 set cursorline
 set scrolloff=10
-set showmode
 set hlsearch
 set history=1000
 set wildmenu
@@ -42,6 +41,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -49,4 +49,4 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 
 set completeopt=noinsert,menuone,noselect
 
-colorscheme base16-atelier-dune
+colorscheme solarized8
