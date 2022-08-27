@@ -48,7 +48,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'lifepillar/vim-solarized8'
 Plug 'plasticboy/vim-markdown'
-
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 
@@ -57,3 +57,7 @@ autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
 colorscheme base16-atelier-dune
+
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
