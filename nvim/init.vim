@@ -14,6 +14,15 @@ set undofile
 set incsearch
 set ignorecase
 
+set cursorline
+set scrolloff=10
+set showmode
+set hlsearch
+set history=1000
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
 syntax enable
 filetype plugin indent on
 
