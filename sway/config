@@ -246,3 +246,5 @@ mode "system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+s mode "system"
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
