@@ -23,7 +23,7 @@ set $menu wofi --show=drun --lines=5 --promt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg $HOME/Downloads/wallpaper.png fill
+# output "*" bg $HOME/Downloads/fox.jpg fill
 #
 # Example configuration:
 #
@@ -248,3 +248,9 @@ mode "system" {
 bindsym $mod+s mode "system"
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+### Layout
+
+# gaps inner 10
+default_border pixel 0
+
