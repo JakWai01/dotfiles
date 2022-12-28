@@ -74,7 +74,7 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "Europe/Berlin",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
@@ -102,7 +102,7 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 15 
         },
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
@@ -163,4 +163,5 @@
 	"exec-if": "pgrep spotify"
     }
 }
+
 

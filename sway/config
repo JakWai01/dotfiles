@@ -23,7 +23,7 @@ set $menu wofi --show=drun --lines=5 --promt=""
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output "*" bg $HOME/Downloads/fox.jpg fill
+output "*" bg $HOME/Pictures/monaco.jpg fill
 #
 # Example configuration:
 #
@@ -93,6 +93,10 @@ input "type:touchpad" {
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+    # Make a screenshot
+    bindsym Print exec grim screenshot.png
+
 #
 # Moving around:
 #
@@ -212,12 +216,12 @@ bar {
 	swaybar_command waybar
 }
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +1%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -1%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-bindsym XF86MonBrightnessDown exec sudo light -U 10
-bindsym XF86MonBrightnessUp exec sudo light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
 
 exec swayidle -w \
 	timeout 60 $lock \
@@ -252,5 +256,6 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 ### Layout
 
 # gaps inner 10
-default_border pixel 0
+default_border pixel 0 
 
+exec --no-startup-id 'nm-applet --indicator'
