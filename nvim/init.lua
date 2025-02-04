@@ -13,6 +13,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 -- Options
+if vim.g.vscode then
+    -- https://github.com/vscode-neovim/vscode-neovim/issues/298
+    vim.opt.clipboard:append("unnamedplus")
+end
+
 vim.g.mapleader = ' '
 
 vim.opt.rtp:prepend(lazypath)
@@ -39,10 +44,11 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+vim.wo.wrap = false
 
 -- Plugins
 require("lazy").setup({
-	'rmehri01/onenord.nvim',
+    { "rose-pine/neovim", name = "rose-pine" },
 	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
@@ -57,8 +63,14 @@ require("lazy").setup({
     'nvim-treesitter/nvim-treesitter',
 })
 
--- Theme
-require('onenord').setup()
+require('rose-pine').setup({
+    disable_background = true,
+    styles = {
+        italic = false,
+    },
+})
+
+vim.cmd([[colorscheme rose-pine-moon]])
 
 -- Telescope
 local builtin = require('telescope.builtin')
