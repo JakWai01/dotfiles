@@ -48,7 +48,15 @@ vim.wo.wrap = false
 
 -- Plugins
 require("lazy").setup({
-    { "rose-pine/neovim", name = "rose-pine" },
+	{ "rose-pine/neovim", name = "rose-pine" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{ "Mofiqul/dracula.nvim" }, 
+	{'shaunsingh/nord.nvim'},
 	"neovim/nvim-lspconfig",
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-nvim-lsp",
@@ -57,10 +65,10 @@ require("lazy").setup({
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/vim-vsnip",
 	"simrat39/rust-tools.nvim",
-	"itchyny/lightline.vim",
-    "nvim-telescope/telescope.nvim",
-    'nvim-lua/plenary.nvim',
-    'nvim-treesitter/nvim-treesitter',
+    "itchyny/lightline.vim",
+	"nvim-telescope/telescope.nvim",
+	'nvim-lua/plenary.nvim',
+	'nvim-treesitter/nvim-treesitter',
 })
 
 require('rose-pine').setup({
@@ -70,7 +78,7 @@ require('rose-pine').setup({
     },
 })
 
-vim.cmd([[colorscheme rose-pine-moon]])
+vim.cmd([[colorscheme nord]])
 
 -- Telescope
 local builtin = require('telescope.builtin')

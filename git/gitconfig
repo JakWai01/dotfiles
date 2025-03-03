@@ -1,0 +1,29 @@
+[user]
+	email = salet@posteo.net
+    name = JakWai01
+
+[core]
+	editor = vim
+
+[merge]
+    conflictstyle = zdiff3
+    
+[rebase]
+    autosquash = true
+    autostash = true 
+
+[commit]
+    verbose = true
+
+[diff]
+    colorMoved = true
+    algorithm = histogram
+
+[grep]
+    patternType = perl
+
+[feature]
+    experimental = true
+
+[branch]
+    sort = committerdate
