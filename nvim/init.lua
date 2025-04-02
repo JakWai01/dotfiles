@@ -20,6 +20,10 @@ end
 
 vim.g.mapleader = ' '
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.rtp:prepend(lazypath)
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -55,6 +59,17 @@ require("lazy").setup({
 		priority = 1000,
 		opts = {},
 	},
+    {
+      'stevearc/oil.nvim',
+      ---@module 'oil'
+      ---@type oil.SetupOpts
+      opts = {},
+      -- Optional dependencies
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+      -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+      lazy = false,
+    },
 	{ "Mofiqul/dracula.nvim" }, 
 	{'shaunsingh/nord.nvim'},
 	"neovim/nvim-lspconfig",
@@ -67,9 +82,14 @@ require("lazy").setup({
 	"simrat39/rust-tools.nvim",
     "itchyny/lightline.vim",
 	"nvim-telescope/telescope.nvim",
-	'nvim-lua/plenary.nvim',
-	'nvim-treesitter/nvim-treesitter',
+	"nvim-lua/plenary.nvim",
+	"nvim-treesitter/nvim-treesitter",
 })
+
+require("oil").setup()
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 
 require('rose-pine').setup({
     disable_background = true,
